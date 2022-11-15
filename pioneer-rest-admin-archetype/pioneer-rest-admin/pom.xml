@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.glsx</groupId>
+        <artifactId>pioneer-rest-admin-archetype</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>war</packaging>
+    <description>Microservice Scaffolding Project Base on Spring Cloud</description>
+
+    <artifactId>pioneer-rest-admin</artifactId>
+
+    <dependencies>
+        <!-- 运行环境上下文 -->
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-admin-context</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- 接入微服务组件联盟 配置、注册、网关、链路、监控等 ,单体应用无需引入(logback-spring.xml与logstash相关内容需要注释掉)-->
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-admin-alliance</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-admin-dubbo</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- dao示例 -->
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-rest-admin-dao</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-rest-admin-api</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

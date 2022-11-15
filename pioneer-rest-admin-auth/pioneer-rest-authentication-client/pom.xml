@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.glsx</groupId>
+        <artifactId>pioneer-rest-admin-auth</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>pioneer-rest-authentication-client</artifactId>
+    <packaging>jar</packaging>
+
+    <name>pioneer-rest-authentication-client</name>
+    <description>Demo Oauth2 project for Spring Cloud Oauth2 Authentication Client</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-admin-core</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- feign -->
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-admin-feign</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--oauth2认证-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+            <version>1.1.1.RELEASE</version>
+        </dependency>
+    </dependencies>
+</project>

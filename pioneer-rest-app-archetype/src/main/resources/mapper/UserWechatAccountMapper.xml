@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.glsx.app.modules.mapper.UserWechatAccountMapper">
+    <resultMap id="BaseResultMap" type="cn.com.glsx.app.modules.entity.UserWechatAccount">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="auth_id" jdbcType="INTEGER" property="authId"/>
+        <result column="union_id" jdbcType="VARCHAR" property="unionId"/>
+        <result column="wechat_avatar" jdbcType="VARCHAR" property="wechatAvatar"/>
+        <result column="wechat_name" jdbcType="VARCHAR" property="wechatName"/>
+        <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate"/>
+        <result column="created_by" jdbcType="INTEGER" property="createdBy"/>
+        <result column="updated_date" jdbcType="TIMESTAMP" property="updatedDate"/>
+        <result column="updated_by" jdbcType="INTEGER" property="updatedBy"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, auth_id, union_id, wechat_avatar, wechat_name, del_flag, created_date, created_by,
+        updated_date, updated_by
+    </sql>
+
+    <select id="selectByAuthId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user_wechat_account
+        where auth_id = #{authId}
+        and del_flag = 0
+    </select>
+</mapper>

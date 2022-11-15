@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.glsx.app.modules.mapper.UserLocalAuthMapper">
+    <resultMap id="BaseResultMap" type="cn.com.glsx.app.modules.entity.UserLocalAuth">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate"/>
+        <result column="created_by" jdbcType="INTEGER" property="createdBy"/>
+        <result column="updated_date" jdbcType="TIMESTAMP" property="updatedDate"/>
+        <result column="updated_by" jdbcType="INTEGER" property="updatedBy"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, mobile, `password`, del_flag, created_date, created_by,
+        updated_date, updated_by
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user_local_auth
+        where id = #{id}
+        and del_flag = 0
+    </select>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        select tcula.id, tcula.mobile, tcula.`password`, tcuar.user_id, tcuar.auth_id
+        from t_user_local_auth tcula,
+             t_user_auth_rel tcuar
+        where tcula.id = tcuar.auth_id
+          and auth_type = 'local'
+          and tcuar.user_id = #{userId}
+          and tcuar.del_flag = 0 limit 1
+    </select>
+
+    <update id="updateMobileByUserId">
+        update t_user_local_auth tcula ,t_user_auth_rel tcuar,t_user tcu
+        set tcula.mobile = #{mobile},
+            tcu.account = #{mobile}
+        where tcula.id = tcuar.auth_id
+          and auth_type = 'local'
+          and tcuar.user_id = tcu.id
+          and tcuar.user_id = #{userId}
+    </update>
+
+    <update id="updatePasswordByUserId">
+        update t_user_local_auth tcula ,t_user_auth_rel tcuar
+        set tcula.password = #{password}
+        where tcula.id = tcuar.auth_id
+          and auth_type = 'local'
+          and tcuar.user_id = #{userId}
+    </update>
+
+    <update id="logicDeleteById">
+        update t_user_local_auth
+        set del_flag = -1
+        where id = #{id}
+    </update>
+</mapper>

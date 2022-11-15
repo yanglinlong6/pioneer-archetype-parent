@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>pioneer-rest-admin-demo</artifactId>
+        <groupId>com.glsx</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>pioneer-rest-seata-order</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-admin-context</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-admin-alliance</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-admin-mybatis</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-admin-seata</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-rest-seata-account-api</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-rest-seata-storage-api</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.glsx</groupId>
+            <artifactId>pioneer-rest-seata-order-api</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

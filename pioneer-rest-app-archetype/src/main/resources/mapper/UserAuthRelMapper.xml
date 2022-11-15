@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.glsx.app.modules.mapper.UserAuthRelMapper">
+    <resultMap id="BaseResultMap" type="cn.com.glsx.app.modules.entity.UserAuthRel">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="auth_id" jdbcType="INTEGER" property="authId"/>
+        <result column="auth_type" jdbcType="VARCHAR" property="authType"/>
+        <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate"/>
+        <result column="created_by" jdbcType="INTEGER" property="createdBy"/>
+        <result column="updated_date" jdbcType="TIMESTAMP" property="updatedDate"/>
+        <result column="updated_by" jdbcType="INTEGER" property="updatedBy"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, user_id, auth_id, auth_type, del_flag, created_date, created_by, updated_date,
+        updated_by
+    </sql>
+
+    <select id="selectByAuthTypeAndAuthId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user_auth_rel
+        where auth_type = #{authType}
+        and auth_id = #{authId}
+        and del_flag = 0
+    </select>
+
+    <select id="selectByAuthTypeAndUserId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user_auth_rel
+        where auth_type = #{authType}
+        and user_id = #{userId}
+        and del_flag = 0
+    </select>
+
+    <select id="selectLocalAuthRelByUserId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user_auth_rel
+        where auth_type = 'local'
+        and user_id = #{userId}
+        and del_flag = 0
+        limit 1
+    </select>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user_auth_rel
+        where id = #{id}
+        and del_flag = 0
+    </select>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user_auth_rel
+        where user_id = #{userId}
+        and del_flag = 0
+    </select>
+
+    <update id="logicDeleteByUserId">
+        update t_user_auth_rel
+        set del_flag = -1
+        where user_id = #{userId}
+    </update>
+</mapper>
