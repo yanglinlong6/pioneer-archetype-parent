@@ -22,7 +22,7 @@ import static java.util.TimeZone.getTimeZone;
 @EnableDubbo
 @EnableRestAdmin
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"cn.com.glsx.admin.api", "cn.com.glsx.echocenter.api"})
+@EnableFeignClients(basePackages = {"cn.com.glsx.admin.api"})
 @EnableTransactionManagement
 @EnableMBeanExport(registration = RegistrationPolicy.IGNORE_EXISTING)
 @SpringBootApplication
