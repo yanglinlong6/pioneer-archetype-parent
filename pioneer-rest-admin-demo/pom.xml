@@ -20,7 +20,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.6.RELEASE</spring-cloud-alibaba.version>
-        <revision>1.0.0-SNAPSHOT</revision>
         <!-- 本地发布服务器 -->
         <!--        <local.nexus.snapshots.url>http://127.0.0.1:8081/repository/maven-snapshots/</local.nexus.snapshots.url>-->
         <!--        <local.nexus.releases.url>http://127.0.0.1:8081/repository/maven-releases/</local.nexus.releases.url>-->
