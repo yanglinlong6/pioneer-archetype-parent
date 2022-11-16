@@ -1,7 +1,7 @@
-package cn.com.glsx.admin.modules.mapper;
+package cn.com.glsx.scheduler.modules.mapper;
 
-import cn.com.glsx.admin.modules.entity.User;
-import cn.com.glsx.admin.modules.model.UserSearch;
+import cn.com.glsx.scheduler.modules.entity.User;
+import cn.com.glsx.scheduler.modules.model.UserSearch;
 import com.glsx.plat.mybatis.mapper.CommonBaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

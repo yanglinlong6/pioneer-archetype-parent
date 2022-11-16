@@ -1,4 +1,4 @@
-package cn.com.glsx.admin.modules.entity;
+package cn.com.glsx.scheduler.modules.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.glsx.plat.mybatis.base.BaseEntity;

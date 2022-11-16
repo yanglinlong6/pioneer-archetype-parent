@@ -1,4 +1,4 @@
-package cn.com.glsx.admin.modules.model;
+package cn.com.glsx.scheduler.modules.model;
 
 import cn.hutool.db.Page;
 import lombok.Data;
