@@ -32,11 +32,11 @@
             <artifactId>pioneer-admin-context</artifactId>
             <version>${revision}</version>
         </dependency>
-        <dependency>
-            <groupId>com.glsx</groupId>
-            <artifactId>pioneer-admin-kafka</artifactId>
-            <version>${revision}</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.glsx</groupId>-->
+        <!--            <artifactId>pioneer-admin-kafka</artifactId>-->
+        <!--            <version>${revision}</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>com.glsx</groupId>
             <artifactId>pioneer-admin-kafka-ancient</artifactId>
