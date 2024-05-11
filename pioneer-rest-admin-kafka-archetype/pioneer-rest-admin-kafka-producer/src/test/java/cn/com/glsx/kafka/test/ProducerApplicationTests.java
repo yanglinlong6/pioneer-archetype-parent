@@ -17,7 +17,7 @@ public class ProducerApplicationTests {
 
     @Test
     public void testSendMsg() {
-        for (int i = 0; i <= 100; i++) {
+        for (int i = 0; i <= 120; i++) {
             testProducer.sendMsg("this is a test " + i);
         }
     }

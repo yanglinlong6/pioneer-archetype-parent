@@ -27,11 +27,11 @@
         <!--        <local.nexus.snapshots.url>http://192.168.3.233/nexus/content/repositories/snapshots/</local.nexus.snapshots.url>-->
         <!--        <local.nexus.releases.url>http://192.168.3.233/nexus/content/repositories/releases/</local.nexus.releases.url>-->
 
-        <!--        <local.nexus.snapshots.url>file:D:\\JAVAAPP\\maven-repo</local.nexus.snapshots.url>-->
-        <!--        <local.nexus.releases.url>file:D:\\JAVAAPP\\maven-repo</local.nexus.releases.url>-->
+        <local.nexus.snapshots.url>file:D:\\JAVAAPP\\maven-repo</local.nexus.snapshots.url>
+        <local.nexus.releases.url>file:D:\\JAVAAPP\\maven-repo</local.nexus.releases.url>
 
-        <local.nexus.snapshots.url>file:/Users/yanglinlong/worksparce/javaApp/maven-repo</local.nexus.snapshots.url>
-        <local.nexus.releases.url>file:/Users/yanglinlong/worksparce/javaApp/maven-repo</local.nexus.releases.url>
+        <!--        <local.nexus.snapshots.url>file:/Users/yanglinlong/worksparce/javaApp/maven-repo</local.nexus.snapshots.url>-->
+        <!--        <local.nexus.releases.url>file:/Users/yanglinlong/worksparce/javaApp/maven-repo</local.nexus.releases.url>-->
     </properties>
 
     <dependencies>
